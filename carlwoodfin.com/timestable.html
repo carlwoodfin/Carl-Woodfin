@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title>Random Times Table Generator</title>
+		<style>
+			html, body {
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+				overflow: hidden;
+			}
+			p {
+				font-size: 135px;
+			}
+			a {
+				text-decoration: none;
+				border-radius: 10px;
+				padding: 15px 10px;
+				border: 1px solid #222;
+				color: #fff;
+				background: rgb(102, 217, 239);
+			}
+			.first {
+				margin-right: 10px;
+				color: red;
+			}
+			.second {
+				margin-left: 10px;
+				color: orange;
+			}
+			label {
+				font-style: italic;
+				margin-right: 15px;
+			}
+			.max {
+				width: 40px;
+				height: 40px;
+			}
+			.dm {
+				margin: auto;
+				margin-top: 12.5%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dm">
+			<label for="max">Highest Number Fact </label><input name="max" type="text" class="max" value="12"/>
+			<p><span class="first"></span> x <span class="second"></span> = </p>
+			<a href="#" class="request">Next question</a>
+		</div>
+	</body>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script>
+		function generateNewPair() {
+			var max = $('.max').val();
+			var first = Math.round(Math.random() * (max - 1) + 1);
+			var second = Math.round(Math.random() * (max - 1) + 1);
+			console.log('first' + first);
+			console.log('second' + second);
+			$('.first').text(first);
+			$('.second').text(second);
+		}
+
+		$('.request').click(function() {
+			generateNewPair();
+		})
+
+		$(document).ready(function() {
+			generateNewPair();
+		})
+
+	</script>
+</html>
