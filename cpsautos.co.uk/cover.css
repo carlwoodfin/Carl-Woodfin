@@ -57,6 +57,10 @@ body {
 	color: rgb(255, 102, 0);
 }
 
+.white {
+	color: white;
+}
+
 /* Padding for spacing */
 .inner {
   padding: 30px;
